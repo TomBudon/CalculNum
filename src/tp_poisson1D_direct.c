@@ -53,7 +53,7 @@ int main(int argc,char *argv[])
 
   set_GB_operator_colMajor_poisson1D(AB, &lab, &la, &kv);
 
-  // write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "AB.dat");
+  write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "AB.dat");
 
   printf("Solution with LAPACK\n");
   /* LU Factorization */
@@ -81,6 +81,10 @@ int main(int argc,char *argv[])
 
   /* Relative forward error */
   // TODO : Compute relative norm of the residual
+
+
+  // double norm = sqrt(cblas_ddot(la, X, 0, X, 0));
+
   
   printf("\nThe relative forward error is relres = %e\n",relres);
 
